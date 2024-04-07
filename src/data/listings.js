@@ -4,7 +4,8 @@ module.exports = [
     id: 1,
     image: "/images/listings/g1-1.jpg",
     title: "Equestrian Family Home",
-    city:'New York',location: "New York City, CA, USA",
+    city:'New York',
+    location: "New York City, CA, USA",
     bed: "1",
     bath: "2",
     sqft: 1200,
@@ -14,9 +15,8 @@ module.exports = [
     propertyType:'Houses',yearBuilding:2018,
     featured:true,
     lat: 40.7279707552121,
-        long: -74.07152705896405,
+    long: -74.07152705896405,
     features:[
-      
       "Air Conditioning",
       "Lawn",
       "TV Cable",
@@ -34,22 +34,21 @@ module.exports = [
     id: 2,
     image: "/images/listings/g1-2.jpg",
     title: "Luxury villa in Rego Park",
-    city:'Los Angeles',location: "Los Angeles City, CA, USA",
-
+    city:'Los Angeles',
+    location: "Los Angeles City, CA, USA",
     lat: 34.1738017565271,
     long: -118.34227408812067,
     bed: "2",
     bath: "1",
     sqft: 1300,
     price: "$82,000",
-    propertyType:'Houses',yearBuilding:2017,
+    propertyType:'Houses',
+    yearBuilding:2017,
     forRent: true,
-   
     tags: ["house", "villa", "apartments"],
     features:[
       "Attic",
       "Basketball court",
-      
       "TV Cable",
       "Dryer",
       "Outdoor Shower",
