@@ -8,7 +8,7 @@ const Hero = ({filterFunctions}) => {
   return (
     <>
       <div className="inner-banner-style1 text-center">
-        <h2 className="hero-title animate-up-3">Find Your Dream Home</h2>
+        <h2 className="hero-title animate-up-3">Find Your Dream Homeeeee</h2>
         <p className="hero-text animate-up-3">
           We’ve more than 745,000 apartments, place &amp; plot.
         </p>
