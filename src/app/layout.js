@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import "../../public/scss/main.scss";
 import { DM_Sans, Poppins } from "next/font/google";
 import { useEffect } from "react";
+import {ApolloWrapper} from "@/shared/api/apollo-wrapper";
 
 if (typeof window !== "undefined") {
   import("bootstrap");
@@ -39,8 +40,9 @@ export default function RootLayout({ children }) {
         className={`body  ${poppins.variable} ${dmSans.variable}`}
         cz-shortcut-listen="false"
       >
+      <ApolloWrapper>
         <div className="wrapper ovh">{children}</div>
-
+      </ApolloWrapper>
         <ScrollToTop />
       </body>
     </html>
