@@ -1,12 +1,18 @@
 "use client";
-import listings from "@/data/listings";
+// import listings from "@/data/listings";
 import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
-
+import { usePropertyDescriptions } from "@/shared/api/usePropertyDescriptions";
 const FeaturedListings = () => {
+  const { loading, error, data } = usePropertyDescriptions();
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  const listings = data?.propertyDescriptionCollection?.items || [];
   return (
     <>
       <Swiper
@@ -36,7 +42,7 @@ const FeaturedListings = () => {
           },
         }}
       >
-        {listings.slice(0, 4).map((listing) => (
+        {data.propertyDescriptionCollection.items.slice(0, 4).map((listing) => (
           <SwiperSlide key={listing.id}>
             <div className="item">
               <div className="listing-style1">
@@ -45,7 +51,7 @@ const FeaturedListings = () => {
                     width={382}
                     height={248}
                     className="w-100 h-100 cover"
-                    src={listing.image}
+                    src={listing.imageCollection.items[0].url}
                     alt="listings"
                   />
                   <div className="sale-sticker-wrap">
@@ -63,7 +69,7 @@ const FeaturedListings = () => {
                 </div>
                 <div className="list-content">
                   <h6 className="list-title">
-                    <Link href={`/single-v1/${listing.id}`}>{listing.title}</Link>
+                    <Link href={listing.id ? `/single-v1/${listing.id}` : "/"}>{listing.title}</Link>
                   </h6>
                   <p className="list-text">{listing.location}</p>
                   <div className="list-meta d-flex align-items-center">
